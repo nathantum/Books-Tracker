@@ -11,9 +11,13 @@ const bookSchema = new Schema({
         type: String,
         required: true
     },
+    summary: {
+        type: String,
+        required: false
+    },
     rating: {
         type: Number,
-        required: false
+        required: true
     }
 }, { timestamps: true })
 

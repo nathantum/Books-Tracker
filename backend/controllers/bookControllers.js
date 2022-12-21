@@ -1,4 +1,3 @@
-const { json } = require('express')
 const Book = require('../models/bookModel')
 const mongoose = require('mongoose')
 
@@ -28,10 +27,25 @@ const getBook = async (req, res) => {
 
 // create a new book
 const createBook = async (req, res) => {
-    const { title, author, rating} = req.body
+    const { title, author, summary, rating} = req.body
+    let emptyFields = []
+
+    if(!author){
+        emptyFields.push('author')
+    }
+    if(!title){
+        emptyFields.push('title')
+    }
+    if(!rating){
+        emptyFields.push('rating')
+    }
+
+    if(emptyFields.length > 0){
+       return  res.status(400).json({error: 'Please fill the required fields!', emptyFields})
+    }
     // add doc to db
     try {
-        const book = await Book.create({title, author, rating})
+        const book = await Book.create({title, author, summary, rating})
         res.status(200).json(book)
 
     } catch (error) {
