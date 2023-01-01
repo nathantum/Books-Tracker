@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
       const fetchBooks = async () => {
-      const response = await fetch('/api/books', {
+      const response = await fetch(`${process.env.MONGO_URI}/api/books`, {
         headers : {
           'Authorization' : `Bearer ${user.token}`
         }
