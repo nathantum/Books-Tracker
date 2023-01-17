@@ -23,7 +23,7 @@ const BookForm = () => {
 
         const book = { author, title, summary, rating}
 
-        const response = await fetch(`${process.env.MONGO_URI}/api/books`, {
+        const response = await fetch('/api/books', {
             method: 'POST',
             body: JSON.stringify(book),
             headers: {

@@ -10,7 +10,7 @@ const BookDetails = ( {book} ) => {
       return
     }
     
-    const response = await fetch(`${process.env.MONGO_URI}/api/books/${book._id}`, {
+    const response = await fetch('/api/books/' + book._id, {
       method: 'DELETE',
       headers: {
         'Authorization' : `Bearer ${user.token}`
