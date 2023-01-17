@@ -1,0 +1,21 @@
+{
+  "name": "booktracker",
+  "version": "1.0.0",
+  "description": "Book App Tracker",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathantum/Books-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathantum/Books-Tracker/issues"
+  },
+  "homepage": "https://github.com/nathantum/Books-Tracker#readme"
+}
