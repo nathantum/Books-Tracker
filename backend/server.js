@@ -2,7 +2,7 @@ require('dotenv').config()
 const expresss = require('express');
 const booksRoutes = require('./routes/books')
 const userRoutes = require('./routes/user')
-import path from 'path';
+const path = require('path');
 
 const mongoose = require('mongoose')
 
