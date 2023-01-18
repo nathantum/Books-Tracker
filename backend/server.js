@@ -1,15 +1,15 @@
 require('dotenv').config()
-const expresss = require('express');
+const express = require('express');
 const booksRoutes = require('./routes/books')
 const userRoutes = require('./routes/user')
 const path = require('path');
 
 const mongoose = require('mongoose')
 
-const app = expresss()
+const app = express()
 
 // middleware - json
-app.use(expresss.json())
+app.use(express.json())
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
